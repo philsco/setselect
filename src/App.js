@@ -9,6 +9,15 @@ import TestFields from './test.fields';
 import SeatSelect from './seat.select';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        vehicles: [],
+        children: [],
+        rows: 8,
+        positions: ["Left Window", "Center Seat", "Right Window" ]
+  }
+}
   render() {
     return (
       <div className="App">
@@ -19,9 +28,11 @@ class App extends Component {
         <div>
 
 
-        <Form inline>
+        <Form >
 
-        <SeatSelect /> 
+        <TestFields />
+
+        <SeatSelect pos={this.state.positions} row={this.state.rows} /> 
         </Form>
 
           To get started, edit <code>src/App.js</code> and save to reload.
